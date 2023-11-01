@@ -1,11 +1,10 @@
 import express from 'express';
 import path from 'path';
+import url from 'url';
 import { fileURLToPath } from 'url';
 import './db.mjs';
 
 const app = express();
-
-
 
 //retrieve the model registered with mongoose
 import mongoose from 'mongoose';
@@ -15,12 +14,15 @@ import mongoose from 'mongoose';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// serve static files
-app.use(express.static(path.join(__dirname, 'public')));
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+// body parser (req.body)
+app.use(express.urlencoded({ extended: false }));
+
+// serve static files
+app.use(express.static(path.join(__dirname, 'public')));
 
 // enable sessions with middleware to manage session data
 const session = require('express-session');
