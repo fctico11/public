@@ -5,6 +5,8 @@ import './db.mjs';
 
 const app = express();
 
+
+
 //retrieve the model registered with mongoose
 import mongoose from 'mongoose';
 //const Review = mongoose.model('Review');
@@ -19,6 +21,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+// enable sessions with middleware to manage session data
+const session = require('express-session');
+const sessionOptions = {
+    secret: 'secret cookie thang (store this elsewhere!)',
+    resave: true,
+    saveUninitialized: true
+};
+app.use(session(sessionOptions));
 
 /*
 //express session middleware to manage session data
