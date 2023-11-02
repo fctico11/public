@@ -56,7 +56,7 @@ An Example List with Embedded Items:
 
 ## Site map
 
-![site map](Site_map.png)
+![site map](documentation/Site_map.png)
 
 ## User Stories or Use Cases
 
