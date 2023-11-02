@@ -42,25 +42,21 @@ An Example List with Embedded Items:
 
 ## Wireframes
 
-(__TODO__: wireframes for all of the pages on your site; they can be as simple as photos of drawings or you can use a tool like Balsamiq, Omnigraffle, etc.)
+/portfolio/create - page for adding a new cryptocurrency to the portfolio
 
-/list/create - page for creating a new shopping list
+![portfolio create](documentation/Portfoliocreate.png)
 
-![list create](documentation/list-create.png)
+/portfolio - page for showing all cryptocurrency holdings
 
-/list - page for showing all shopping lists
+![portfolio](documentation/Portfolio.png)
 
-![list](documentation/list.png)
+/list/slug - page for showing specific cryptocurrency details and historical performance
 
-/list/slug - page for showing specific shopping list
-
-![list](documentation/list-slug.png)
+![portfolio slug](documentation/Portfolio_slug.png)
 
 ## Site map
 
-(__TODO__: draw out a site map that shows how pages are related to each other)
-
-Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia/commons/2/20/Sitemap_google.jpg), but you can create one without the screenshots, drop shadows, etc. ... just names of pages and where they flow to.
+![site map](Site_map.png)
 
 ## User Stories or Use Cases
 
@@ -91,5 +87,5 @@ Here's a [complex example from wikipedia](https://upload.wikimedia.org/wikipedia
 
 1. [passport.js authentication docs](http://passportjs.org/docs) - (add link to source code that was based on this)
 2. [CoinGecko API docs](https://www.coingecko.com/api/documentation) - Used for fetching real-time cryptocurrency data
-3. [Chart.js docs] (https://www.chartjs.org/docs/latest/) - For creating visual data representations
+3. [Chart.js docs](https://www.chartjs.org/docs/latest/) - For creating visual data representations
 
