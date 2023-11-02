@@ -83,9 +83,7 @@ An Example List with Embedded Items:
 
 ## Annotations / References Used
 
-(__TODO__: list any tutorials/references/etc. that you've based your code off of)
-
-1. [passport.js authentication docs](http://passportjs.org/docs) - (add link to source code that was based on this)
+1. [passport.js authentication docs](http://passportjs.org/docs) - Used for user authentication in teh app
 2. [CoinGecko API docs](https://www.coingecko.com/api/documentation) - Used for fetching real-time cryptocurrency data
 3. [Chart.js docs](https://www.chartjs.org/docs/latest/) - For creating visual data representations
 
