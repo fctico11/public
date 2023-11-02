@@ -33,13 +33,4 @@ const sessionOptions = {
 };
 app.use(session(sessionOptions));
 
-/*
-//express session middleware to manage session data
-app.use(session({
-    secret: 'your_secret_key', //secret is used to sign the session id cookie
-    resave: false, //only saves the store if the session was modified
-    saveUninitialized: true //new sessions are saved
-  }));
-  */
-
 app.listen(process.env.PORT || 3000);

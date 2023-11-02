@@ -1,36 +1,26 @@
-The content below is an example project proposal / requirements document. Replace the text below the lines marked "__TODO__" with details specific to your project. Remove the "TODO" lines.
-
-(__TODO__: your project name)
-
-# Shoppy Shoperson 
+# FranCrypto Portfolio Pro
 
 ## Overview
 
-(__TODO__: a brief one or two paragraph, high-level description of your project)
+Keeping track of all your investments can be a difficult task given the volatile nature of the market. Knowing what the value of your portfolio at any given time can make all the difference.
 
-Remembering what to buy at the grocery store is waaaaay too difficult. Also, shopping for groceries when you're hungry leads to regrettable purchases. Sooo... that's where Shoppy Shoperson comes in!
-
-Shoppy Shoperson is a web app that will allow users to keep track of multiple grocery lists. Users can register and login. Once they're logged in, they can create or view their grocery list. For every list that they have, they can add items to the list or cross off items.
+FranCrypto Portfolio Pro is a web app that will allow users to moonitor their cryptocurrency investments in real-time. Users can register and login. Once they're logged in, they can add their cryptocurrency holdings. The app gets live price updates for each cryptocurrency in a users portfolio, allowing them to see their portfolio's current value and performance all in a quick glance.
 
 
 ## Data Model
 
-(__TODO__: a description of your application's data and their relationships to each other) 
+The application will store Users, Cryptocurrencies and Transactions
 
-The application will store Users, Lists and Items
-
-* users can have multiple lists (via references)
-* each list can have multiple items (by embedding)
-
-(__TODO__: sample documents)
+* users can have multiple transactions (via references)
+* each transaction refers to a particular cryptocurrency
 
 An Example User:
 
 ```javascript
 {
-  username: "shannonshopper",
+  username: "cryptoinvestoor",
   hash: // a password hash,
-  lists: // an array of references to List documents
+  lists: // an array of references to Transaction documents
 }
 ```
 
@@ -39,12 +29,10 @@ An Example List with Embedded Items:
 ```javascript
 {
   user: // a reference to a User object
-  name: "Breakfast foods",
-  items: [
-    { name: "pancakes", quantity: "9876", checked: false},
-    { name: "ramen", quantity: "2", checked: true},
-  ],
-  createdAt: // timestamp
+  cryptocurrency: "Breakfast foods",
+  quantity: 1.5,
+  boughtAt: 30000, // price at which the user bought this cryptocurrency
+  currentPrice: // live updated price
 }
 ```
 
