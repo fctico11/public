@@ -1,37 +1,61 @@
 import mongoose from 'mongoose';
-const mongoose = require('mongoose');
+import passportLocalMongoose from 'passport-local-mongoose';
 
-//Schemas
+const { Schema } = mongoose;
 
-// users
-// * our site requires authentication...
-// * so users have a username and password
-// * they also can have 0 or more lists
-const user = new mongoose.Schema({
-    // username provided by authentication plugin
-    username: {type: String, required: true, unique: true},
-    // password hash provided by authentication plugin
-    hash: {type: String, required: true},
-    //lists below is an example of what will be stored with each individual user
-    //reference to transactions made by the user
-    transactions: [{type: mongoose.Schema.Types.ObjectId, ref: 'Transaction'}]
-  });
+// Define the User Schema
+const userSchema = new Schema({
 
-// transaction Schema
-const transaction = new mongoose.Schema({
-    // reference to the User
-    user: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
-    cryptocurrency: {type: String, required: true},
-    quantity: {type: Number, required: true},
-    boughtAtPrice: {type: Number, required: true},
-    currentPrice: {type: Number} // this can be updated in real time via the crypto API
+  plants: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Plant'
+  }]
 });
 
-// TODO: add remainder of setup for slugs, connection, registering models, etc. below
-//Register the schema with mongoose
-const User = mongoose.model('user', userSchema);
-const Transaction = mongoose.model('transaction', transactionSchema);
-export {user, transaction};
+userSchema.plugin(passportLocalMongoose);
 
-console.log(process.env.DSN);
-mongoose.connect(process.env.DSN); //connect to database
+// Define the Plant Schema
+const plantSchema = new Schema({
+  nickname: {
+    type: String,
+    required: true
+  },
+  species: {
+    type: String,
+    required: true
+  },
+  lastWatered: {
+    type: Date,
+    required: true
+  },
+  nextWateringDue: {
+    type: Date,
+    required: true
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  }
+});
+
+// Models created from schemas
+const User = mongoose.model('User', userSchema);
+const Plant = mongoose.model('Plant', plantSchema);
+
+// Your MongoDB URI from the environment variables or fallback to default
+const mongoDB = process.env.DSN;
+mongoose.connect(mongoDB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', function() {
+  console.log('Connected to the database');
+});
+
+// Export the models and db
+export { User, Plant, db };

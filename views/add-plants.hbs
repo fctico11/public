@@ -1,0 +1,19 @@
+{{!-- This is the form to add a new plant to the user's list --}}
+
+<h1>Add a New Plant</h1>
+
+<form action="/plants/add" method="POST">
+    <label for="nickname">Plant Nickname:</label>
+    <input type="text" id="nickname" name="nickname" required>
+
+    <label for="species">Species:</label>
+    <input type="text" id="species" name="species" required>
+
+    <label for="lastWatered">Last Watered On:</label>
+    <input type="date" id="lastWatered" name="lastWatered" required>
+
+    <label for="nextWateringDue">Next Watering Due:</label>
+    <input type="date" id="nextWateringDue" name="nextWateringDue" required>
+
+    <button type="submit">Add Plant</button>
+</form>

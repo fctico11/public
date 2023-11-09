@@ -1,0 +1,20 @@
+{{!-- This is the template to display a list of the user's plants --}}
+
+<h1>My Plant List</h1>
+
+{{#if plants.length}}
+    <ul>
+        {{#each plants}}
+            <li>
+                <strong>Nickname:</strong> {{this.nickname}} <br>
+                <strong>Species:</strong> {{this.species}} <br>
+                <strong>Last Watered On:</strong> {{this.lastWatered}} <br>
+                <strong>Next Watering Due:</strong> {{this.nextWateringDue}}
+            </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>You have not added any plants yet. </p>
+{{/if}}
+
+<a href="/plants/add">Add a plant</a>

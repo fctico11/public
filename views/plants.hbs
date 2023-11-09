@@ -1,0 +1,10 @@
+{{#each plants}}
+  <div class="plant">
+    <h2>{{this.nickname}}</h2>
+    <p>Species: {{this.species}}</p>
+    <p>Last Watered: {{this.lastWatered}}</p>
+    <p>Next Watering Due: {{this.nextWateringDue}}</p>
+  </div>
+{{else}}
+  <p>You have no plants added yet.</p>
+{{/each}}
