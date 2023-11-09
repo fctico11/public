@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 20px 0; 
+    margin-bottom: 30px;
+  }
+  
+  th, td {
+    padding: 5px; 
+    text-align: left;
+  }
+  
