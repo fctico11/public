@@ -1,20 +1,32 @@
 {{!-- This is the template to display a list of the user's plants --}}
-
 <h1>My Plant List</h1>
 
 {{#if plants.length}}
-    <ul>
-        {{#each plants}}
-            <li>
-                <strong>Nickname:</strong> {{this.nickname}} <br>
-                <strong>Species:</strong> {{this.species}} <br>
-                <strong>Last Watered On:</strong> {{this.lastWatered}} <br>
-                <strong>Next Watering Due:</strong> {{this.nextWateringDue}}
-            </li>
-        {{/each}}
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Nickname</th>
+                <th>Species</th>
+                <th>Last Watered On</th>
+                <th>Next Watering Due</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each plants}}
+                <tr>
+                    <td><input type="checkbox" name="selectedPlants" value="{{this._id}}"></td>
+                    <td>{{this.nickname}}</td>
+                    <td>{{this.species}}</td>
+                    <td>{{dateFormat this.lastWatered "mm/dd/yyyy"}}</td>
+                    <td>{{dateFormat this.nextWateringDue "mm/dd/yyyy"}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
 {{else}}
-    <p>You have not added any plants yet. </p>
+    <p>You have not added any plants yet.</p>
 {{/if}}
 
 <a href="/plants/add">Add a plant</a>
+

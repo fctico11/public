@@ -6,6 +6,8 @@ import { PlantRouter } from './plantRouter.mjs';
 import { User } from './db.mjs';
 import passport from './config.mjs'; // Import passport from your configuration file
 import flash from 'connect-flash';
+import hbs from 'hbs';
+import { format } from 'date-fns';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -28,6 +30,11 @@ app.use(flash());
 app.use((req, res, next) => {
   res.locals.user = req.isAuthenticated() ? req.user : null; // Make user available in all views
   next();
+});
+
+// Register a Handlebars helper for date formatting
+hbs.registerHelper('dateFormat', (value, formatString) => {
+  return format(value, formatString);
 });
 
 // View engine setup
