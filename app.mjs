@@ -8,6 +8,7 @@ import passport from './config.mjs'; // Import passport from your configuration 
 import flash from 'connect-flash';
 import hbs from 'hbs';
 import { format } from 'date-fns';
+import { utcToZonedTime } from 'date-fns-tz';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -34,7 +35,10 @@ app.use((req, res, next) => {
 
 // Register a Handlebars helper for date formatting
 hbs.registerHelper('dateFormat', (value, formatString) => {
-  return format(value, formatString);
+  // Convert the UTC date to the same timezone to avoid shifting the day
+  const date = new Date(value);
+  const dateInUTC = utcToZonedTime(date, 'UTC');
+  return format(zonedDate, formatString, { timeZone: 'UTC' });
 });
 
 // View engine setup
