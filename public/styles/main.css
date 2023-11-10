@@ -35,7 +35,8 @@ nav {
     justify-content: space-between;
 }
 
-nav ul {
+
+.nav-links {
     display: flex;
     justify-content: center;
     flex-grow: 1;
@@ -45,12 +46,13 @@ nav ul {
     padding: 0;
 }
 
-nav li {
+.nav-links li {
     margin-right: 123px; /* Space between menu items */
+    padding: 10px;
 }
 
 /* Style for the navigation links */
-nav a {
+.nav-links li a {
   font-weight: bold; 
   text-decoration: none; /* Remove underline */
   color: black; 
@@ -61,6 +63,15 @@ nav a {
 nav a:hover {
   color: #305230; /* Darker shade when hovering */
   text-decoration: underline; 
+}
+
+.nav-links li.user-info {
+  font-weight: bold;
+  padding: 10px;
+  white-space: nowrap;
+  align-items: center;
+  display: flex;
+    justify-content: center;
 }
 
   

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant Watering Tracker</title>
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
@@ -17,17 +16,17 @@
                 <span class="app-name">WaterPal</span>
             </div>
             
-            <ul>
+            <ul class="nav-links">
                 <li><a href="/">Home</a></li>
+                <li><a href="/plants">My Plants</a></li>
+                <li><a href="/plants/add">Add Plant</a></li>
                 <!-- Conditional rendering based on authentication status -->
                 {{#if user}}
-                    <li>Logged in as: {{user.username}}</li>
+                    <li class="user-info">Logged in as: {{user.username}}</li>
                     <li><a href="/logout">Logout</a></li>
                 {{else}}
                     <li><a href="/create-account">Create Account</a></li>
                 {{/if}}
-                <li><a href="/plants">My Plants</a></li>
-                <li><a href="/plants/add">Add Plant</a></li>
                 
             </ul>
         </nav>
@@ -38,10 +37,9 @@
     </main>
 
     <footer>
-        <p>&copy; {{year}} PlantPal by Marty</p>
+        <p>&copy; {{year}} PlantPal </p>
     </footer>
 
-    <!-- Add your script tags here -->
     <script src="/scripts/main.js"></script>
 </body>
 </html>
