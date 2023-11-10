@@ -16,6 +16,7 @@ table {
 }
 
 nav {
+    background-color: #90ee90;
     display: flex;
     align-items: center;
 }
@@ -31,6 +32,18 @@ nav li {
     margin-right: 40px; /* Space between menu items */
 }
 
-/* ... other styles ... */
+/* Style for the navigation links */
+nav a {
+  font-weight: bold; 
+  text-decoration: none; /* Remove underline */
+  color: black; 
+  padding: 10px; 
+  display: inline-block; 
+}
+
+nav a:hover {
+  color: #305230; /* Darker shade when hovering */
+  text-decoration: underline; 
+}
 
   
