@@ -45,10 +45,7 @@ const Plant = mongoose.model('Plant', plantSchema);
 
 // Your MongoDB URI from the environment variables or fallback to default
 const mongoDB = process.env.DSN;
-mongoose.connect(mongoDB, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect(mongoDB);
 
 const db = mongoose.connection;
 
