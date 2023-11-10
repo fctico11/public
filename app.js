@@ -47,7 +47,7 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Static files folder
-//app.use(express.static('public'));
+app.use(express.static('public'));
 
 // Home route redirects to login if not authenticated
 app.get('/', (req, res) => {
@@ -136,6 +136,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 */
+
 
 module.exports = app;
 
