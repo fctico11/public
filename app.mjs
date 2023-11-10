@@ -1,14 +1,14 @@
-import express from 'express';
-import session from 'express-session';
-import bodyParser from 'body-parser';
-import 'dotenv/config';
-import { PlantRouter } from './plantRouter.mjs';
-import { User } from './db.mjs';
-import passport from './config.mjs'; // Import passport from your configuration file
-import flash from 'connect-flash';
-import hbs from 'hbs';
-import { format } from 'date-fns';
-import { utcToZonedTime } from 'date-fns-tz';
+const express = require('express');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+require('dotenv').config();
+const PlantRouter = require('./plantRouter'); // Update the import path as needed
+const { User } = require('./db'); // Update the import path as needed
+const passport = require('./config'); // Update the import path as needed
+const flash = require('connect-flash');
+const hbs = require('hbs');
+const { format } = require('date-fns');
+const { utcToZonedTime } = require('date-fns-tz');
 
 const app = express();
 //const PORT = process.env.PORT || 3000;
@@ -135,5 +135,5 @@ app.listen(PORT, () => {
 });
 */
 
-export default app;
+module.exports = app;
 

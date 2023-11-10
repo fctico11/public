@@ -1,10 +1,4 @@
-// /api/index.js (CommonJS module for Vercel)
+// /api/index.js
+const app = require('../app'); 
 
-module.exports = async (req, res) => {
-    if (!global.__app) {
-      const { default: app } = await import('../app.mjs');
-      global.__app = app;
-    }
-    return global.__app(req, res);
-  };
-  
+module.exports = app;
