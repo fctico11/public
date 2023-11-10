@@ -11,8 +11,8 @@ table {
   }
 
   .logo img {
-    height: 50px; /* You can adjust the size as needed */
-    margin-right: 20px; /* Space between logo and menu items */
+    height: 123px; /* You can adjust the size as needed */
+    margin-right: 50px; /* Space between logo and menu items */
 }
 
 nav {
@@ -28,7 +28,7 @@ nav ul {
 }
 
 nav li {
-    margin-right: 20px; /* Space between menu items */
+    margin-right: 40px; /* Space between menu items */
 }
 
 /* ... other styles ... */
