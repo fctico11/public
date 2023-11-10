@@ -1,10 +1,9 @@
-import { config } from 'dotenv';
-config(); // Execute the dotenv config right away to ensure environment variables are loaded
+const dotenv = require('dotenv');
+dotenv.config(); // Execute the dotenv config right away to ensure environment variables are loaded
 
-import passport from 'passport';
-import { Strategy as LocalStrategy } from 'passport-local';
-//import bcrypt from 'bcryptjs';
-import { User } from './db.mjs'; // Assuming your User model is exported from db.mjs
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const User = require('./db').User; // Assuming your User model is exported from db.mjs
 
 // Configure the local strategy for use by Passport using async/await
 passport.use(new LocalStrategy(
@@ -41,5 +40,5 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-export default passport;
+module.exports =  passport;
 
