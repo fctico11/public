@@ -42,10 +42,6 @@ hbs.registerHelper('dateFormat', (value, formatString) => {
   return format(zonedDate, formatString, { timeZone: 'UTC' });
 });
 
-// Log the directory names to see where things are
-console.log('__dirname:', __dirname);
-console.log('Process.cwd():', process.cwd());
-console.log('Views directory:', path.join(__dirname, 'views'));
 
 // View engine setup
 app.set('view engine', 'hbs');
