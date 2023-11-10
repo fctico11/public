@@ -71,7 +71,12 @@ nav a:hover {
   white-space: nowrap;
   align-items: center;
   display: flex;
-    justify-content: center;
+  justify-content: center;
 }
 
+
+.username {
+  color: #006400;
+  padding-left: 10px;
+}
   
