@@ -9,6 +9,7 @@ const flash = require('connect-flash');
 const hbs = require('hbs');
 const { format } = require('date-fns');
 const { utcToZonedTime } = require('date-fns-tz');
+const path = require('path');
 
 const app = express();
 //const PORT = process.env.PORT || 3000;
@@ -43,7 +44,7 @@ hbs.registerHelper('dateFormat', (value, formatString) => {
 
 // View engine setup
 app.set('view engine', 'hbs');
-app.set('views', './views');
+app.set('views', path.join(__dirname, 'views'));
 
 // Static files folder
 //app.use(express.static('public'));
