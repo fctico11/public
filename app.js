@@ -12,7 +12,6 @@ const { utcToZonedTime } = require('date-fns-tz');
 const path = require('path');
 
 const app = express();
-//const PORT = process.env.PORT || 3000;
 
 // Middleware configuration
 app.use(bodyParser.json());
@@ -132,6 +131,7 @@ app.get('/logout', (req, res) => {
 
 // Start the server
 /*
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
