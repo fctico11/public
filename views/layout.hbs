@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant Watering Tracker</title>
-    <!-- Add your stylesheet links here -->
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
     <header>
         <nav>
-            <!-- Logo Image -->
-            <a href="/" class="logo">
-                <img src="/styles/img/plantguy.png" alt="PlantPal Logo" />
-            </a>
+            <div class="logo-container">
+                <!-- Logo Image -->
+                <a href="/" class="logo">
+                    <img src="/styles/img/plantguy.png" alt="PlantPal Logo" />
+                </a>
+                <span class="app-name">WaterPal</span>
+            </div>
+            
             <ul>
                 <li><a href="/">Home</a></li>
                 <!-- Conditional rendering based on authentication status -->
@@ -25,7 +28,7 @@
                 {{/if}}
                 <li><a href="/plants">My Plants</a></li>
                 <li><a href="/plants/add">Add Plant</a></li>
-                <!-- Include other navigation links as needed -->
+                
             </ul>
         </nav>
     </header>
