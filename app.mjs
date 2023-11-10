@@ -11,7 +11,7 @@ import { format } from 'date-fns';
 import { utcToZonedTime } from 'date-fns-tz';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+//const PORT = process.env.PORT || 3000;
 
 // Middleware configuration
 app.use(bodyParser.json());
@@ -46,7 +46,7 @@ app.set('view engine', 'hbs');
 app.set('views', './views');
 
 // Static files folder
-app.use(express.static('public'));
+//app.use(express.static('public'));
 
 // Home route redirects to login if not authenticated
 app.get('/', (req, res) => {
@@ -129,9 +129,11 @@ app.get('/logout', (req, res) => {
 });
 
 // Start the server
+/*
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+*/
 
-export { app };
+export default app;
 
