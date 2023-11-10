@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 hbs.registerHelper('dateFormat', (value, formatString) => {
   // Convert the UTC date to the same timezone to avoid shifting the day
   const date = new Date(value);
-  const dateInUTC = utcToZonedTime(date, 'UTC');
+  const zonedDate = utcToZonedTime(date, 'UTC');
   return format(zonedDate, formatString, { timeZone: 'UTC' });
 });
 

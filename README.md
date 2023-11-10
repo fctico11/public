@@ -1,10 +1,11 @@
-# FranCrypto Portfolio Pro
+# WaterPal
+NOTE: My original app idea was a cryptocurrency portfolioo tracker. I have sinced switched to a plant watering app to keep track of watering schedule.
 
 ## Overview
 
-Keeping track of all your investments can be a difficult task given the volatile nature of the market. Knowing what the value of your portfolio at any given time can make all the difference.
+Keeping track of all your plants can be a difficult task especially when they all have different watering needs. Knowing when to water each individual plant at any given time can make all the difference.
 
-FranCrypto Portfolio Pro is a web app that will allow users to moonitor their cryptocurrency investments in real-time. Users can register and login. Once they're logged in, they can add their cryptocurrency holdings. The app gets live price updates for each cryptocurrency in a users portfolio, allowing them to see their portfolio's current value and performance all in a quick glance.
+WaterPal is a web app that will allow users to moonitor their plants and their watering schedules. Users can register and login. Once they're logged in, they can add their plants and modify their watering schedule. The app displays their plants and allows the user to easily keep track of when they need to be watered next
 
 
 ## Data Model
@@ -83,7 +84,7 @@ An Example List with Embedded Items:
 
 ## Annotations / References Used
 
-1. [passport.js authentication docs](http://passportjs.org/docs) - Used for user authentication in teh app
+1. [passport.js authentication docs](http://passportjs.org/docs) - Used for user authentication in the app
 2. [CoinGecko API docs](https://www.coingecko.com/api/documentation) - Used for fetching real-time cryptocurrency data
 3. [Chart.js docs](https://www.chartjs.org/docs/latest/) - For creating visual data representations
 
