@@ -1,5 +1,5 @@
 # WaterPal
-NOTE: My original app idea was a cryptocurrency portfolioo tracker. I have sinced switched to a plant watering app to keep track of watering schedule.
+NOTE: My original app idea was a cryptocurrency portfolio tracker. I have sinced switched to a plant watering app to keep track of watering schedule.
 
 ## Overview
 
@@ -10,18 +10,18 @@ WaterPal is a web app that will allow users to moonitor their plants and their w
 
 ## Data Model
 
-The application will store Users, Cryptocurrencies and Transactions
+The application will store Users and Plants
 
-* users can have multiple transactions (via references)
-* each transaction refers to a particular cryptocurrency
+* users can have multiple plants (via references)
+* each plant has iits own watering schedule
 
 An Example User:
 
 ```javascript
 {
-  username: "cryptoinvestoor",
+  username: "plantpal",
   hash: // a password hash,
-  lists: // an array of references to Transaction documents
+  plants: // an array of references to Plant documents
 }
 ```
 
@@ -30,40 +30,40 @@ An Example List with Embedded Items:
 ```javascript
 {
   user: // a reference to a User object
-  cryptocurrency: "Breakfast foods",
-  quantity: 1.5,
-  boughtAt: 30000, // price at which the user bought this cryptocurrency
-  currentPrice: // live updated price
+  nickname: "Ally",
+  species = "Aloe Vera",
+  lastWatered: // date of last watering,
+  nextWateringDue: // date of next expected watering
 }
 ```
 
 
-## [Link to Commented First Draft Schema](db.mjs) 
+## [Link to Commented First Draft Schema](db.js) 
 
 
 ## Wireframes
 
-/portfolio/create - page for adding a new cryptocurrency to the portfolio
+/home - page for user registration or login
 
 ![portfolio create](documentation/Portfoliocreate.png)
 
-/portfolio - page for showing all cryptocurrency holdings
+/plants/add - page for adding a new plant to the user's collection
 
 ![portfolio](documentation/Portfolio.png)
 
-/list/slug - page for showing specific cryptocurrency details and historical performance
+/plants - page for showing all plants and their next watering dates
 
 ![portfolio slug](documentation/Portfolio_slug.png)
 
 ## Site map
-
+Note: has not been modified to reflect new plant watering idea
 ![site map](documentation/Site_map.png)
 
 ## User Stories or Use Cases
 
 1. as non-registered user, I can register a new account with the site
 2. as a user, I can log in to the site
-3. as a user, I can add a plant
+3. as a user, I can add a plant to my collection
 4. as a user, I can view all of my plants
 5. as a user, I can view the watering schedule of each plant
 6. as a user, I can remove or edit a plant
@@ -72,19 +72,19 @@ An Example List with Embedded Items:
 
 * (5 points) Integrate user authentication
     * I'm going to be using passport for user authentication
-* (3 points) Real-time data fetch for cryptocurrency priices
-    * Will use a third party API such as coinmarketcap or CoinGecko to get real-time price updates.
-* (2 points)
-    * Use a library such as Chart.js to visually represent portfolio performance over time.
+* (3 points) Configuration management using dotenv
+    * I'm going to use dotenv to help load environment variables from a .env file
+* (3 points) Deploy using Vercel
+    * I'm going to use vercel to deploy my express and mongoDB application.
 
-10 points total out of 8 required points 
+11 points total out of 8 required points 
 
 
-## [Link to Initial Main Project File](app.mjs) 
+## [Link to Initial Main Project File](app.js) 
 
 ## Annotations / References Used
 
 1. [passport.js authentication docs](http://passportjs.org/docs) - Used for user authentication in the app
-2. [CoinGecko API docs](https://www.coingecko.com/api/documentation) - Used for fetching real-time cryptocurrency data
-3. [Chart.js docs](https://www.chartjs.org/docs/latest/) - For creating visual data representations
+2. [Dotenv](https://www.npmjs.com/package/dotenv) - Used for loading environment variables
+3. [Vercel Deployment](https://vercel.com/guides/using-express-with-vercel#standalone-express) - For deploying an express app on Vercel
 
