@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import passportLocalMongoose from 'passport-local-mongoose';
+const mongoose = require('mongoose');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 const { Schema } = mongoose;
 
@@ -58,4 +58,4 @@ db.once('open', function() {
 });
 
 // Export the models and db
-export { User, Plant, db };
+module.exports = { User, Plant, db };
