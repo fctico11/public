@@ -1,5 +1,5 @@
-import express from 'express';
-import { Plant, User } from './db.mjs';
+const express = require('express');
+const { Plant, User } = require('./db');
 
 const router = express.Router();
 
@@ -86,4 +86,4 @@ router.get('/list', async (req, res) => {
   }
 });
 
-export { router as PlantRouter };
+module.exports =  router;
