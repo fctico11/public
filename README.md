@@ -63,10 +63,10 @@ An Example List with Embedded Items:
 
 1. as non-registered user, I can register a new account with the site
 2. as a user, I can log in to the site
-3. as a user, I can add a cryptocurrency holding
-4. as a user, I can view all of my cryptocurrency holdings
-5. as a user, I can view the current value and/or the performance of each holding
-6. as a user, I can remove or edit a cryptocurrency holding
+3. as a user, I can add a plant
+4. as a user, I can view all of my plants
+5. as a user, I can view the watering schedule of each plant
+6. as a user, I can remove or edit a plant
 
 ## Research Topics
 
