@@ -1,5 +1,5 @@
-// /api/index.js
-
-const app = require('../app.mjs').default;
-
-module.exports = app;
+module.exports = async (req, res) => {
+    const { default: app } = await import('../app.mjs');
+    return app(req, res);
+};
+  
