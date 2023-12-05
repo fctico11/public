@@ -15,9 +15,15 @@ passport.use(new LocalStrategy(
       }
       //hash instead of pw
       user.authenticate(password, (err, user, passwordErr) => {
-        if (err) return done(err);
-        if (passwordErr) return done(null, false, { message: 'Incorrect password.' });
-        if (user) return done(null, user);
+        if (err){
+          return done(err);
+        } 
+        if (passwordErr) {
+          return done(null, false, { message: 'Incorrect password.' });
+        }
+        if (user) {
+          return done(null, user);
+        }
       });
     } catch (err) {
       return done(err);
@@ -40,5 +46,5 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-module.exports =  passport;
+module.exports = passport;
 
