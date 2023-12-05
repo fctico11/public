@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The content below is an example project proposal / requirements document. Replace the text below the lines marked \"__TODO__\" with details specific to your project. Remove the \"TODO\" lines.",
   "main": "/api/index.js",
-  "engines":{
+  "engines": {
     "node": "18.x"
   },
   "scripts": {
@@ -29,5 +29,8 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^8.0.0"
+  },
+  "dependencies": {
+    "method-override": "^3.0.0"
   }
 }

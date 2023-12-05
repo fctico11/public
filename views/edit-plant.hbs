@@ -1,0 +1,18 @@
+{{!-- edit-plant.hbs --}}
+<h1>Edit Plant</h1>
+
+<form action="/plants/edit/{{plant._id}}" method="POST">
+    <label for="nickname">Plant Nickname:</label>
+    <input type="text" id="nickname" name="nickname" value="{{plant.nickname}}" required>
+
+    <label for="species">Species:</label>
+    <input type="text" id="species" name="species" value="{{plant.species}}" required>
+
+    <label for="lastWatered">Last Watered On:</label>
+    <input type="date" id="lastWatered" name="lastWatered" value="{{dateFormat plant.lastWatered 'yyyy-MM-dd'}}" required>
+
+    <label for="nextWateringDue">Next Watering Due:</label>
+    <input type="date" id="nextWateringDue" name="nextWateringDue" value="{{dateFormat plant.nextWateringDue 'yyyy-MM-dd'}}" required>
+
+    <button type="submit">Update Plant</button>
+</form>

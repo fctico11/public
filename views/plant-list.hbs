@@ -2,6 +2,7 @@
 <h1>My Plant List</h1>
 
 {{#if plants.length}}
+<form id="deleteForm" method="POST" action="/plants/delete">
     <table>
         <thead>
             <tr>
@@ -24,9 +25,45 @@
             {{/each}}
         </tbody>
     </table>
+    <input type="submit" class="button-style" formaction="/plants/delete" formmethod="POST" value="Delete Selected">
+    </form>
+    <input type="submit" id="editButton" class="button-style" formaction="/plants/edit" formmethod="GET" value="Edit Selected">
 {{else}}
     <p>You have not added any plants yet.</p>
 {{/if}}
 
-<a href="/plants/add">Add a plant</a>
+<form action="/plants/add" method="get">
+  <button type="submit" class="button-style">Add a Plant</button>
+</form>
 
+<script>
+  document.getElementById('deleteButton').addEventListener('click', function() {
+    const selectedPlants = document.querySelectorAll('input[name="selectedPlants"]:checked');
+    const plantIds = Array.from(selectedPlants).map(input => input.value);
+
+    plantIds.forEach(plantId => {
+      fetch('/plants/delete/' + plantId, { method: 'DELETE' })
+        .then(response => {
+          if(response.ok) {
+            document.getElementById('plant-' + plantId).remove();
+          } else {
+            alert('Failed to delete plant with ID ' + plantId);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+  });
+</script>
+
+<script>
+  document.getElementById('editButton').addEventListener('click', function() {
+    const selectedPlant = document.querySelector('input[name="selectedPlants"]:checked');
+    if (selectedPlant) {
+      window.location.href = `/plants/edit/${selectedPlant.value}`;
+    } else {
+      alert('Please select a plant to edit.');
+    }
+  });
+</script>

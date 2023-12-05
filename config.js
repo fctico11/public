@@ -1,11 +1,11 @@
 const dotenv = require('dotenv');
-dotenv.config(); // Execute the dotenv config right away to ensure environment variables are loaded
+dotenv.config(); //execute the dotenv config right away to ensure env variables are loaded
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const User = require('./db').User; // Assuming your User model is exported from db.mjs
+const User = require('./db').User; 
 
-// Configure the local strategy for use by Passport using async/await
+//config the local strategy for use by passport using async/await
 passport.use(new LocalStrategy(
   async (username, password, done) => {
     try {
@@ -13,7 +13,7 @@ passport.use(new LocalStrategy(
       if (!user) {
         return done(null, false, { message: 'Incorrect username.' });
       }
-      // Use the 'hash' field instead of 'password'
+      //hash instead of pw
       user.authenticate(password, (err, user, passwordErr) => {
         if (err) return done(err);
         if (passwordErr) return done(null, false, { message: 'Incorrect password.' });
@@ -25,12 +25,12 @@ passport.use(new LocalStrategy(
   }
 ));
 
-// Serialize user into the session
+//serialize user into the session
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
-// Deserialize user from the session
+//deserialize user from the session
 passport.deserializeUser(async (id, done) => {
   try {
     const user = await User.findById(id).exec();

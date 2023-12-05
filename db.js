@@ -3,7 +3,7 @@ const passportLocalMongoose = require('passport-local-mongoose');
 
 const { Schema } = mongoose;
 
-// Define the User Schema
+//User Schema
 const userSchema = new Schema({
 
   plants: [{
@@ -14,7 +14,7 @@ const userSchema = new Schema({
 
 userSchema.plugin(passportLocalMongoose);
 
-// Define the Plant Schema
+//Plant Schema
 const plantSchema = new Schema({
   nickname: {
     type: String,
@@ -39,11 +39,11 @@ const plantSchema = new Schema({
   }
 });
 
-// Models created from schemas
+//models created from schemas
 const User = mongoose.model('User', userSchema);
 const Plant = mongoose.model('Plant', plantSchema);
 
-// Your MongoDB URI from the environment variables or fallback to default
+//Mongo URI
 const mongoDB = process.env.DSN;
 mongoose.connect(mongoDB);
 
@@ -54,5 +54,5 @@ db.once('open', function() {
   console.log('Connected to the database');
 });
 
-// Export the models and db
+//Export models and db
 module.exports = { User, Plant, db };
